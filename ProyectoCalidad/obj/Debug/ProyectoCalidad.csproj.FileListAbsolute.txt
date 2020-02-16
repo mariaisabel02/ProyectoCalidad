@@ -1,0 +1,10 @@
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\bin\Debug\ProyectoCalidad.exe.config
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\bin\Debug\ProyectoCalidad.exe
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\bin\Debug\ProyectoCalidad.pdb
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.csprojAssemblyReference.cache
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.Form1.resources
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.Properties.Resources.resources
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.csproj.GenerateResource.cache
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.csproj.CoreCompileInputs.cache
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.exe
+C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.pdb
