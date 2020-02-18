@@ -15,6 +15,8 @@ namespace ProyectoCalidad
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'base_calidadDataSet.RegistroDiarioVuelos' table. You can move, or remove it, as needed.
+            this.registroDiarioVuelosTableAdapter.Fill(this.base_calidadDataSet.RegistroDiarioVuelos);
             // TODO: This line of code loads data into the 'base_calidadDataSet.Vuelos' table. You can move, or remove it, as needed.
             this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
             // TODO: This line of code loads data into the 'base_calidadDataSet.Aeropuerto' table. You can move, or remove it, as needed.
@@ -60,21 +62,21 @@ namespace ProyectoCalidad
                 string companiaAerea = comboBox1.Text;
                 string pais = comboBox2.Text;
                 decimal capacidad = decimal.Parse(textBox2.Text);
-                System.DateTime fecha = DateTime.Parse(maskedTextBox1.Text);
-                string diaSemana = comboBox3.Text;
+               // System.DateTime fecha = DateTime.Parse(maskedTextBox1.Text);
+               // string diaSemana = comboBox3.Text;
                 string arrivalDeparture = comboBox4.Text;
                 string aeropuerto = (string)comboBox5.SelectedValue;
 
                 //construcción del query
                 base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
-                vuelosTableAdapter.Insert(codigoVuelo, companiaAerea, diaSemana, pais, arrivalDeparture, capacidad, fecha, aeropuerto);
+                vuelosTableAdapter.Insert(codigoVuelo, companiaAerea, pais,arrivalDeparture,capacidad,aeropuerto);
 
                 //limpia del formulario
                 textBox1.Clear();
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
                 textBox2.Clear();
-                comboBox3.SelectedIndex = -1;
+               // comboBox3.SelectedIndex = -1;
                 comboBox4.SelectedIndex = -1;
                 comboBox5.SelectedIndex = -1;
 
@@ -88,7 +90,7 @@ namespace ProyectoCalidad
             }
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
