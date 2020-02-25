@@ -30,9 +30,72 @@ namespace ProyectoCalidad
             comboBox3.SelectedIndex = -1;
             comboBox4.SelectedIndex = -1;
             comboBox5.SelectedIndex = -1;
+            comboBox6.SelectedIndex = -1;
+            comboBox7.SelectedIndex = -1;
             comboBox8.SelectedIndex = -1;
+            comboBox9.SelectedIndex = -1;
         }
 
+        
+        //agregar vuelo (genérico)
+        private void btn_agregar_vuelo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //tomar valores del formulario
+                string codigoVuelo = textBox1.Text;
+                string companiaAerea = comboBox1.Text;
+                string pais = comboBox2.Text;
+                decimal capacidad = decimal.Parse(textBox2.Text);
+               // System.DateTime fecha = DateTime.Parse(maskedTextBox1.Text);
+               // string diaSemana = comboBox3.Text;
+                string arrivalDeparture = comboBox4.Text;
+                string aeropuerto = (string)comboBox5.SelectedValue;
+
+                //construcción del query
+                base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
+                vuelosTableAdapter.Insert(codigoVuelo, companiaAerea, pais, arrivalDeparture, capacidad, aeropuerto);
+
+                //limpia del formulario
+                textBox1.Clear();
+                comboBox1.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+                textBox2.Clear();
+                comboBox4.SelectedIndex = -1;
+                comboBox5.SelectedIndex = -1;
+
+                //refresca el grid
+                this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //borar un registro de vuelo (genérico)
+        //se borra el vuelo seleccionado en el grid
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                DataGridViewRow row = dataGridView1.Rows[this.dataGridView1.CurrentCell.RowIndex];
+                vuelosTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), decimal.Parse(row.Cells[4].Value.ToString()), row.Cells[5].Value.ToString());
+                //refresca el grid
+                this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        
+        //consulta de registro de vuelos diarios
         private void btn_consultar_vuelos_Click(object sender, EventArgs e)
         {
             try
@@ -53,46 +116,5 @@ namespace ProyectoCalidad
             }
         }
 
-        private void btn_agregar_vuelo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //tomar valores del formulario
-                string codigoVuelo = textBox1.Text;
-                string companiaAerea = comboBox1.Text;
-                string pais = comboBox2.Text;
-                decimal capacidad = decimal.Parse(textBox2.Text);
-               // System.DateTime fecha = DateTime.Parse(maskedTextBox1.Text);
-               // string diaSemana = comboBox3.Text;
-                string arrivalDeparture = comboBox4.Text;
-                string aeropuerto = (string)comboBox5.SelectedValue;
-
-                //construcción del query
-                base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
-                vuelosTableAdapter.Insert(codigoVuelo, companiaAerea, pais,arrivalDeparture,capacidad,aeropuerto);
-
-                //limpia del formulario
-                textBox1.Clear();
-                comboBox1.SelectedIndex = -1;
-                comboBox2.SelectedIndex = -1;
-                textBox2.Clear();
-               // comboBox3.SelectedIndex = -1;
-                comboBox4.SelectedIndex = -1;
-                comboBox5.SelectedIndex = -1;
-
-                //refresca el grid
-                this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

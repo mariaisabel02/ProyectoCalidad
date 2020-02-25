@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +39,7 @@
             this.habilitadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aeropuertoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.base_calidadDataSet = new ProyectoCalidad.base_calidadDataSet();
+            this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -110,9 +111,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.fKVuelosCodigoAe31EC6D26BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.registroDiarioVuelosTableAdapter = new ProyectoCalidad.base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeropuertoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.base_calidadDataSet)).BeginInit();
@@ -127,7 +130,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registroDiarioVuelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKVuelosCodigoAe31EC6D26BindingSource)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -161,14 +163,14 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Aeropuertos";
             // 
-            // button2
+            // panel3
             // 
-            this.button2.Location = new System.Drawing.Point(115, 267);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel3.Controls.Add(this.dataGridView3);
+            this.panel3.Location = new System.Drawing.Point(433, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(699, 465);
+            this.panel3.TabIndex = 19;
             // 
             // dataGridView3
             // 
@@ -218,6 +220,15 @@
             // 
             this.base_calidadDataSet.DataSetName = "base_calidadDataSet";
             this.base_calidadDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(115, 267);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Agregar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -344,6 +355,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.PowderBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(336, 0);
             this.panel1.Name = "panel1";
@@ -362,9 +375,9 @@
             this.capacidadMaximaDataGridViewTextBoxColumn,
             this.codigoAeropuertoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vuelosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(88, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(74, 50);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(643, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 347);
             this.dataGridView1.TabIndex = 0;
             // 
             // codigoVueloDataGridViewTextBoxColumn
@@ -889,14 +902,24 @@
             // 
             this.registroDiarioVuelosTableAdapter.ClearBeforeFill = true;
             // 
-            // panel3
+            // button3
             // 
-            this.panel3.BackColor = System.Drawing.Color.PowderBlue;
-            this.panel3.Controls.Add(this.dataGridView3);
-            this.panel3.Location = new System.Drawing.Point(433, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(699, 465);
-            this.panel3.TabIndex = 19;
+            this.button3.Location = new System.Drawing.Point(561, 416);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Actualizar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(642, 416);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Borrar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -911,6 +934,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeropuertoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.base_calidadDataSet)).EndInit();
@@ -928,7 +952,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registroDiarioVuelosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKVuelosCodigoAe31EC6D26BindingSource)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1020,6 +1043,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }
 
