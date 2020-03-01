@@ -8,3 +8,13 @@ C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoC
 C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.csproj.CoreCompileInputs.cache
 C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.exe
 C:\Users\Isa\Dropbox\2020\Calidad de software\Proyecto\ProyectoCalidad\ProyectoCalidad\obj\Debug\ProyectoCalidad.pdb
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\bin\Debug\ProyectoCalidad.exe.config
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\bin\Debug\ProyectoCalidad.exe
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\bin\Debug\ProyectoCalidad.pdb
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.csprojAssemblyReference.cache
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.Form1.resources
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.Properties.Resources.resources
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.csproj.GenerateResource.cache
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.csproj.CoreCompileInputs.cache
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.exe
+C:\Users\jason\Desktop\Calidad\Etapa 2 Calidad Proyecto (Isa)\ProyectoCalidad\obj\Debug\ProyectoCalidad.pdb

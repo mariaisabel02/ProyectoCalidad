@@ -74,7 +74,28 @@ namespace ProyectoCalidad
             }
         }
 
-        //borar un registro de vuelo (genérico)
+        //editar un vuelo
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //construcción del query
+                base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
+                this.Validate();
+                this.vuelosBindingSource.EndEdit();
+                this.vuelosTableAdapter.Update(this.base_calidadDataSet);
+
+                //refresca el grid
+                this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
+                comboBox9.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //borrar un registro de vuelo (genérico)
         //se borra el vuelo seleccionado en el grid
         private void button4_Click(object sender, EventArgs e)
         {
@@ -116,5 +137,108 @@ namespace ProyectoCalidad
             }
         }
 
+        //agregar un aeropuerto
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //tomar valores del formulario
+                string codigoAeropuerto = textBox4.Text;
+                string nombreAeropuerto = textBox5.Text;
+                string direccion = textBox6.Text;
+                int habilitado = checkBox1.Checked ? 1 : 0;
+               
+                //construcción del query
+                base_calidadDataSetTableAdapters.AeropuertoTableAdapter aeropuertoTableAdapter = new base_calidadDataSetTableAdapters.AeropuertoTableAdapter();
+                aeropuertoTableAdapter.Insert(codigoAeropuerto,nombreAeropuerto,direccion,habilitado);
+
+                //limpia del formulario
+                textBox4.Clear();
+                textBox5.Clear();
+                textBox6.Clear();
+                checkBox1.Checked = false;
+
+                //refresca el grid
+                this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //borrar un aeropuerto
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataGridViewRow row = dataGridView3.Rows[this.dataGridView3.CurrentCell.RowIndex];
+                aeropuertoTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), int.Parse(row.Cells[3].Value.ToString()));
+
+                //refresca el grid
+                this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //editar un aeropuerto
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //construcción del query
+                base_calidadDataSetTableAdapters.AeropuertoTableAdapter aeropuertoTableAdapter = new base_calidadDataSetTableAdapters.AeropuertoTableAdapter();
+                this.Validate();
+                this.aeropuertoBindingSource.EndEdit();
+                this.aeropuertoTableAdapter.Update(this.base_calidadDataSet);
+
+                //refresca el grid
+                this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //agregar registro diario de vuelo
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //tomar valores del formulario
+                string codigoVuelo = comboBox9.Text;
+                System.DateTime fechaVuelo = DateTime.Parse(maskedTextBox1.Text);
+                string diaDeLaSemana = comboBox3.Text;
+                int cantidadPasajeros = int.Parse(textBox3.Text);
+
+                string filtro = "";
+                DataRow[] resultadoBusqueda = base_calidadDataSet.Vuelos.Select(filtro);
+
+                //construcción del query
+                base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter registroDiarioVuelosTableAdapter = new base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter();
+                registroDiarioVuelosTableAdapter.Insert(codigoVuelo, diaDeLaSemana, fechaVuelo, (byte?)cantidadPasajeros);
+
+                //limpia del formulario
+                comboBox9.SelectedIndex = -1;
+                maskedTextBox1.Clear();
+                comboBox3.SelectedIndex = -1;
+                textBox3.Clear();
+
+                //refresca el grid
+                this.registroDiarioVuelosTableAdapter.Fill(this.base_calidadDataSet.RegistroDiarioVuelos);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
