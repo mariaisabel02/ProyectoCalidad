@@ -101,12 +101,12 @@ namespace ProyectoCalidad
         {
             try
             {
-                
+                //borra el registro que está seleccionado en el grid
                 DataGridViewRow row = dataGridView1.Rows[this.dataGridView1.CurrentCell.RowIndex];
                 vuelosTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), decimal.Parse(row.Cells[4].Value.ToString()), row.Cells[5].Value.ToString());
+                
                 //refresca el grid
                 this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
-
             }
             catch (Exception ex)
             {
@@ -121,6 +121,7 @@ namespace ProyectoCalidad
         {
             try
             {
+                //toma los valores del formulario
                 System.DateTime primeraFecha = DateTime.Parse(maskedTextBox2.Text);
                 System.DateTime segundaFecha = DateTime.Parse(maskedTextBox3.Text);
                 string tipo = comboBox7.SelectedText;
@@ -173,7 +174,7 @@ namespace ProyectoCalidad
         {
             try
             {
-
+                //borra el registro seleccionado en el grid
                 DataGridViewRow row = dataGridView3.Rows[this.dataGridView3.CurrentCell.RowIndex];
                 aeropuertoTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), int.Parse(row.Cells[3].Value.ToString()));
 
@@ -217,22 +218,32 @@ namespace ProyectoCalidad
                 System.DateTime fechaVuelo = DateTime.Parse(maskedTextBox1.Text);
                 string diaDeLaSemana = comboBox3.Text;
                 int cantidadPasajeros = int.Parse(textBox3.Text);
+                
+                //consulta si la capacidad máxima se excede o no
+                DataTable consulta_capacidad = base_calidadDataSet.Tables["VUELOS"];
+                DataRow[] resultado = consulta_capacidad.Select("CodigoVuelo = '" + codigoVuelo + "'");
 
-                string filtro = "";
-                DataRow[] resultadoBusqueda = base_calidadDataSet.Vuelos.Select(filtro);
+                if ( Convert.ToUInt32(resultado[0]["CapacidadMaxima"]) >= cantidadPasajeros)
+                {
+                    //construcción del query
+                    base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter registroDiarioVuelosTableAdapter = new base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter();
+                    registroDiarioVuelosTableAdapter.Insert(codigoVuelo, diaDeLaSemana, fechaVuelo, (byte?)cantidadPasajeros);
 
-                //construcción del query
-                base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter registroDiarioVuelosTableAdapter = new base_calidadDataSetTableAdapters.RegistroDiarioVuelosTableAdapter();
-                registroDiarioVuelosTableAdapter.Insert(codigoVuelo, diaDeLaSemana, fechaVuelo, (byte?)cantidadPasajeros);
+                    //limpia del formulario
+                    comboBox9.SelectedIndex = -1;
+                    maskedTextBox1.Clear();
+                    comboBox3.SelectedIndex = -1;
+                    textBox3.Clear();
 
-                //limpia del formulario
-                comboBox9.SelectedIndex = -1;
-                maskedTextBox1.Clear();
-                comboBox3.SelectedIndex = -1;
-                textBox3.Clear();
+                    //refresca el grid
+                    this.registroDiarioVuelosTableAdapter.Fill(this.base_calidadDataSet.RegistroDiarioVuelos);
 
-                //refresca el grid
-                this.registroDiarioVuelosTableAdapter.Fill(this.base_calidadDataSet.RegistroDiarioVuelos);
+                }
+                else
+                {
+                    MessageBox.Show("La cantidad de pasajeros debe ser menor o igual a "+ Convert.ToUInt32(resultado[0]["CapacidadMaxima"]));
+                }
+
 
             }
             catch (Exception ex)
