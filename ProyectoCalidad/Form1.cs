@@ -77,21 +77,32 @@ namespace ProyectoCalidad
         //editar un vuelo
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult resultadoDialogo = MessageBox.Show("¿Desea editar este vuelo?", "Confirmación de edición", MessageBoxButtons.YesNo, 
+            MessageBoxIcon.Information);
+            if (resultadoDialogo == DialogResult.Yes)
             {
-                //construcción del query
-                base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
-                this.Validate();
-                this.vuelosBindingSource.EndEdit();
-                this.vuelosTableAdapter.Update(this.base_calidadDataSet);
+                try
+                {
+                    //construcción del query
+                    base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
+                    this.Validate();
+                    this.vuelosBindingSource.EndEdit();
+                    this.vuelosTableAdapter.Update(this.base_calidadDataSet);
 
+                    //refresca el grid
+                    this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
+                    comboBox9.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
                 //refresca el grid
                 this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
                 comboBox9.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -99,20 +110,25 @@ namespace ProyectoCalidad
         //se borra el vuelo seleccionado en el grid
         private void button4_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult resultadoDialogo = MessageBox.Show("¿Desea borrar este vuelo?", "Confirmación de borrado", MessageBoxButtons.YesNo, 
+            MessageBoxIcon.Information);
+
+            if (resultadoDialogo == DialogResult.Yes)
             {
-                //borra el registro que está seleccionado en el grid
-                DataGridViewRow row = dataGridView1.Rows[this.dataGridView1.CurrentCell.RowIndex];
-                vuelosTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), decimal.Parse(row.Cells[4].Value.ToString()), row.Cells[5].Value.ToString());
+                try
+                {
+                    //borra el registro que está seleccionado en el grid
+                    DataGridViewRow row = dataGridView1.Rows[this.dataGridView1.CurrentCell.RowIndex];
+                    vuelosTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), decimal.Parse(row.Cells[4].Value.ToString()), row.Cells[5].Value.ToString());
                 
-                //refresca el grid
-                this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
+                    //refresca el grid
+                    this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
         }
 
         
@@ -172,39 +188,56 @@ namespace ProyectoCalidad
         //borrar un aeropuerto
         private void button5_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //borra el registro seleccionado en el grid
-                DataGridViewRow row = dataGridView3.Rows[this.dataGridView3.CurrentCell.RowIndex];
-                aeropuertoTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), int.Parse(row.Cells[3].Value.ToString()));
+            DialogResult resultadoDialogo = MessageBox.Show("¿Desea borrar este aeropuerto?", "Confirmación de borrado", MessageBoxButtons.YesNo, 
+            MessageBoxIcon.Information);
 
-                //refresca el grid
-                this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
-
-            }
-            catch (Exception ex)
+            if (resultadoDialogo == DialogResult.Yes)
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    //borra el registro seleccionado en el grid
+                    DataGridViewRow row = dataGridView3.Rows[this.dataGridView3.CurrentCell.RowIndex];
+                    aeropuertoTableAdapter.Delete(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), int.Parse(row.Cells[3].Value.ToString()));
+
+                    //refresca el grid
+                    this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         //editar un aeropuerto
         private void button6_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //construcción del query
-                base_calidadDataSetTableAdapters.AeropuertoTableAdapter aeropuertoTableAdapter = new base_calidadDataSetTableAdapters.AeropuertoTableAdapter();
-                this.Validate();
-                this.aeropuertoBindingSource.EndEdit();
-                this.aeropuertoTableAdapter.Update(this.base_calidadDataSet);
+            DialogResult resultadoDialogo = MessageBox.Show("¿Desea editar este aeropuerto?", "Confirmación de edición", MessageBoxButtons.YesNo, 
+            MessageBoxIcon.Information);
 
+            if (resultadoDialogo == DialogResult.Yes)
+            {
+                try
+                {
+                    //construcción del query
+                    base_calidadDataSetTableAdapters.AeropuertoTableAdapter aeropuertoTableAdapter = new base_calidadDataSetTableAdapters.AeropuertoTableAdapter();
+                    this.Validate();
+                    this.aeropuertoBindingSource.EndEdit();
+                    this.aeropuertoTableAdapter.Update(this.base_calidadDataSet);
+
+                    //refresca el grid
+                    this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
                 //refresca el grid
                 this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
