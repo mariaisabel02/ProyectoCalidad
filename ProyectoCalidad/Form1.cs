@@ -312,11 +312,10 @@ namespace ProyectoCalidad
 
                 for (int i = 0; i< resultado.Length; i++)
                 {
-                   totalPasajeros = totalPasajeros + Convert.ToInt32(dataGridView4.Rows[i].Cells[5].Value);
+                    totalPasajeros = totalPasajeros + Convert.ToInt32(dataGridView4.Rows[i].Cells[4].Value);
                 }
-
                 
-                MessageBox.Show("Se han encontrado "+ resultado.Length.ToString() + " registros\nCantidad de pasajeros: ");
+                MessageBox.Show("Se han encontrado "+ resultado.Length.ToString() + " registros\nCantidad de pasajeros: "+totalPasajeros+"");
             }
             catch (Exception ex)
             {
