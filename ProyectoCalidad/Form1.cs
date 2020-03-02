@@ -49,8 +49,6 @@ namespace ProyectoCalidad
                 string companiaAerea = comboBox1.Text;
                 string pais = comboBox2.Text;
                 decimal capacidad = decimal.Parse(textBox2.Text);
-               // System.DateTime fecha = DateTime.Parse(maskedTextBox1.Text);
-               // string diaSemana = comboBox3.Text;
                 string arrivalDeparture = comboBox4.Text;
                 string aeropuerto = (string)comboBox5.SelectedValue;
 
@@ -68,7 +66,6 @@ namespace ProyectoCalidad
 
                 //refresca el grid
                 this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
-
             }
             catch (Exception ex)
             {
@@ -180,7 +177,6 @@ namespace ProyectoCalidad
 
                     //refresca el grid
                     this.aeropuertoTableAdapter.Fill(this.base_calidadDataSet.Aeropuerto);
-
                 }
                 catch (Exception ex)
                 {
@@ -269,6 +265,7 @@ namespace ProyectoCalidad
             {
                 //vaciar el grid
                 dataGridView4.DataSource = null;
+                int totalPasajeros = 0;
 
                 //para consultar la vista de registro de vuelos
                 DataTable consulta_capacidad = base_calidadDataSet.Tables["RegistroVuelosCompleto"];
@@ -284,18 +281,41 @@ namespace ProyectoCalidad
                 //si se ha seleccionado un dia de la semana
                 if (comboBox6.SelectedIndex != -1)
                 {
-                    resultado = consulta_capacidad.Select("CodigoAeropuerto = '" + aeropuerto +
-                                                        "' AND Dia = '" + diaSemana + "' AND ArrivalDeparture = '"+tipo
-                                                        +"' AND Fecha >= '"+primeraFecha+"' AND  Fecha <= '"+segundaFecha+"'");
+                    if (comboBox8.SelectedIndex == -1) //no hay aeropuerto seleccionado
+                    {
+                        resultado = consulta_capacidad.Select("Dia = '" + diaSemana + "' AND ArrivalDeparture = '" + tipo
+                                                        + "' AND Fecha >= '" + primeraFecha + "' AND  Fecha <= '" + segundaFecha + "'");
+                    }
+                    else //si se pregunta por aeropuerto
+                    {
+                        resultado = consulta_capacidad.Select("CodigoAeropuerto = '" + aeropuerto +
+                                    "' AND Dia = '" + diaSemana + "' AND ArrivalDeparture = '" + tipo
+                                    + "' AND Fecha >= '" + primeraFecha + "' AND  Fecha <= '" + segundaFecha + "'");
+                    }
                 }
                 else //consulta que no incluye el día de la semana
                 {
-                    resultado = consulta_capacidad.Select("CodigoAeropuerto = '" + aeropuerto +
+                    if (comboBox8.SelectedIndex == -1) //no hay aeropuerto seleccionado
+                    {
+                        resultado = consulta_capacidad.Select("ArrivalDeparture = '" + tipo
+                                                        + "' AND Fecha >= '" + primeraFecha + "' AND  Fecha <= '" + segundaFecha + "'");
+                    }
+                    else //si se pregunta por aeropuerto
+                    {   
+                        resultado = consulta_capacidad.Select("CodigoAeropuerto = '" + aeropuerto +
                                                         "' AND ArrivalDeparture = '" + tipo
                                                         + "' AND Fecha >= '" + primeraFecha + "' AND  Fecha <= '" + segundaFecha + "'");
+                    }
                 }
-                
+
                 this.dataGridView4.DataSource = resultado;
+
+                for (int i = 0; i< resultado.Length; i++)
+                {
+                   totalPasajeros = totalPasajeros + Convert.ToInt32(dataGridView4.Rows[i].Cells[5].Value);
+                }
+
+                
                 MessageBox.Show("Se han encontrado "+ resultado.Length.ToString() + " registros\nCantidad de pasajeros: ");
             }
             catch (Exception ex)
