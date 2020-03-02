@@ -267,28 +267,41 @@ namespace ProyectoCalidad
         {
             try
             {
+                //vaciar el grid
                 dataGridView4.DataSource = null;
-                //toma los valores del formulario
-                //System.DateTime primeraFecha = DateTime.Parse(maskedTextBox2.Text);
-                //System.DateTime segundaFecha = DateTime.Parse(maskedTextBox3.Text);
-                string tipo = comboBox7.SelectedText;
+
+                //para consultar la vista de registro de vuelos
+                DataTable consulta_capacidad = base_calidadDataSet.Tables["RegistroVuelosCompleto"];
+                DataRow[] resultado; //aquí se seleccionaran los datos filtrados
+
+                //tomar los valores del formulario
+                System.DateTime primeraFecha = DateTime.Parse(maskedTextBox2.Text);
+                System.DateTime segundaFecha = DateTime.Parse(maskedTextBox3.Text);
+                string tipo = comboBox7.Text;
                 string diaSemana = comboBox6.Text;
                 string aeropuerto = (string)comboBox8.SelectedValue;
 
-                //consulta 
-                DataTable consulta_capacidad = base_calidadDataSet.Tables["RegistroVuelosCompleto"];
-                DataRow[] resultado = consulta_capacidad.Select("CodigoAeropuerto = '"+aeropuerto+"' AND Dia = '"+diaSemana+"'");
-
+                //si se ha seleccionado un dia de la semana
+                if (comboBox6.SelectedIndex != -1)
+                {
+                    resultado = consulta_capacidad.Select("CodigoAeropuerto = '" + aeropuerto +
+                                                        "' AND Dia = '" + diaSemana + "' AND ArrivalDeparture = '"+tipo
+                                                        +"' AND Fecha >= '"+primeraFecha+"' AND  Fecha <= '"+segundaFecha+"'");
+                }
+                else //consulta que no incluye el día de la semana
+                {
+                    resultado = consulta_capacidad.Select("CodigoAeropuerto = '" + aeropuerto +
+                                                        "' AND ArrivalDeparture = '" + tipo
+                                                        + "' AND Fecha >= '" + primeraFecha + "' AND  Fecha <= '" + segundaFecha + "'");
+                }
+                
                 this.dataGridView4.DataSource = resultado;
-                MessageBox.Show(comboBox6.Text);
-                MessageBox.Show(resultado.Length.ToString());
+                MessageBox.Show("Se han encontrado "+ resultado.Length.ToString() + " registros\nCantidad de pasajeros: ");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-     
     }
 }

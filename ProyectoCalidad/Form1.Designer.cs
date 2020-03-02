@@ -240,7 +240,7 @@
             this.comboBox7.Items.AddRange(new object[] {
             "A",
             "D"});
-            this.comboBox7.Location = new System.Drawing.Point(353, 73);
+            this.comboBox7.Location = new System.Drawing.Point(353, 77);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(34, 21);
             this.comboBox7.TabIndex = 40;
@@ -249,7 +249,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(231, 75);
+            this.label12.Location = new System.Drawing.Point(231, 81);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(116, 17);
             this.label12.TabIndex = 39;
@@ -257,10 +257,10 @@
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(152, 73);
+            this.maskedTextBox3.Location = new System.Drawing.Point(152, 80);
             this.maskedTextBox3.Mask = "00-00-0000";
             this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(63, 20);
+            this.maskedTextBox3.Size = new System.Drawing.Size(60, 20);
             this.maskedTextBox3.TabIndex = 38;
             this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
             // 
@@ -269,7 +269,7 @@
             this.label14.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(134, 77);
+            this.label14.Location = new System.Drawing.Point(134, 83);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(12, 15);
             this.label14.TabIndex = 37;
@@ -277,10 +277,10 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(70, 72);
+            this.maskedTextBox2.Location = new System.Drawing.Point(63, 80);
             this.maskedTextBox2.Mask = "00-00-0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(58, 20);
+            this.maskedTextBox2.Size = new System.Drawing.Size(65, 20);
             this.maskedTextBox2.TabIndex = 36;
             this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
@@ -289,7 +289,7 @@
             this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 76);
+            this.label10.Location = new System.Drawing.Point(22, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 27;
@@ -298,19 +298,19 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(21, 36);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.Size = new System.Drawing.Size(80, 20);
             this.label9.TabIndex = 26;
             this.label9.Text = "Consulta";
             // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(25, 124);
+            this.dataGridView4.Location = new System.Drawing.Point(25, 130);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1005, 303);
+            this.dataGridView4.Size = new System.Drawing.Size(1011, 316);
             this.dataGridView4.TabIndex = 0;
             // 
             // tabPage2
@@ -981,7 +981,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(404, 75);
+            this.label11.Location = new System.Drawing.Point(627, 81);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(118, 17);
             this.label11.TabIndex = 41;
@@ -998,7 +998,7 @@
             "Viernes",
             "Sábado",
             "Domingo"});
-            this.comboBox6.Location = new System.Drawing.Point(528, 73);
+            this.comboBox6.Location = new System.Drawing.Point(751, 77);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(93, 21);
             this.comboBox6.TabIndex = 42;
@@ -1007,7 +1007,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(648, 77);
+            this.label13.Location = new System.Drawing.Point(407, 81);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 17);
             this.label13.TabIndex = 43;
@@ -1019,7 +1019,7 @@
             this.comboBox8.DataSource = this.aeropuertoBindingSource;
             this.comboBox8.DisplayMember = "Codigo";
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(733, 74);
+            this.comboBox8.Location = new System.Drawing.Point(492, 77);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(100, 21);
             this.comboBox8.TabIndex = 44;
