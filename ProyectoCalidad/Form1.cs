@@ -15,6 +15,8 @@ namespace ProyectoCalidad
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'base_calidadDataSet.RegistroVuelosCompleto' table. You can move, or remove it, as needed.
+            this.registroVuelosCompletoTableAdapter.Fill(this.base_calidadDataSet.RegistroVuelosCompleto);
             // TODO: This line of code loads data into the 'base_calidadDataSet.RegistroDiarioVuelos' table. You can move, or remove it, as needed.
             this.registroDiarioVuelosTableAdapter.Fill(this.base_calidadDataSet.RegistroDiarioVuelos);
             // TODO: This line of code loads data into the 'base_calidadDataSet.Vuelos' table. You can move, or remove it, as needed.
@@ -74,7 +76,7 @@ namespace ProyectoCalidad
             }
         }
 
-        //editar un vuelo
+        //editar un vuelo (genérico)
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult resultadoDialogo = MessageBox.Show("¿Desea editar este vuelo?", "Confirmación de edición", MessageBoxButtons.YesNo, 
@@ -128,29 +130,6 @@ namespace ProyectoCalidad
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-        }
-
-        
-        //consulta de registro de vuelos diarios
-        private void btn_consultar_vuelos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //toma los valores del formulario
-                System.DateTime primeraFecha = DateTime.Parse(maskedTextBox2.Text);
-                System.DateTime segundaFecha = DateTime.Parse(maskedTextBox3.Text);
-                string tipo = comboBox7.SelectedText;
-                string diaSemana = comboBox6.SelectedText;
-                string aeropuerto = comboBox8.SelectedText;
-
-                string filtro = "";
-                DataRow[] resultadoBusqueda = base_calidadDataSet.Vuelos.Select(filtro);
-                dataGridView1.DataSource = resultadoBusqueda;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -269,20 +248,47 @@ namespace ProyectoCalidad
                     textBox3.Clear();
 
                     //refresca el grid
-                    this.registroDiarioVuelosTableAdapter.Fill(this.base_calidadDataSet.RegistroDiarioVuelos);
+                    this.registroVuelosCompletoTableAdapter.Fill(this.base_calidadDataSet.RegistroVuelosCompleto);
 
                 }
                 else
                 {
                     MessageBox.Show("La cantidad de pasajeros debe ser menor o igual a "+ Convert.ToUInt32(resultado[0]["CapacidadMaxima"]));
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        //consultar registros diarios de vuelos
+        private void btn_consultar_vuelos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView4.DataSource = null;
+                //toma los valores del formulario
+                //System.DateTime primeraFecha = DateTime.Parse(maskedTextBox2.Text);
+                //System.DateTime segundaFecha = DateTime.Parse(maskedTextBox3.Text);
+                string tipo = comboBox7.SelectedText;
+                string diaSemana = comboBox6.Text;
+                string aeropuerto = (string)comboBox8.SelectedValue;
+
+                //consulta 
+                DataTable consulta_capacidad = base_calidadDataSet.Tables["RegistroVuelosCompleto"];
+                DataRow[] resultado = consulta_capacidad.Select("CodigoAeropuerto = '"+aeropuerto+"' AND Dia = '"+diaSemana+"'");
+
+                this.dataGridView4.DataSource = resultado;
+                MessageBox.Show(comboBox6.Text);
+                MessageBox.Show(resultado.Length.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+     
     }
 }

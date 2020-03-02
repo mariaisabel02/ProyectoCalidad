@@ -30,6 +30,8 @@ namespace ProyectoCalidad {
         
         private RegistroDiarioVuelosDataTable tableRegistroDiarioVuelos;
         
+        private RegistroVuelosCompletoDataTable tableRegistroVuelosCompleto;
+        
         private global::System.Data.DataRelation relationFK__Vuelos__CodigoAe__31EC6D26;
         
         private global::System.Data.DataRelation relationFK__RegistroD__Codig__36B12243;
@@ -70,6 +72,9 @@ namespace ProyectoCalidad {
                 }
                 if ((ds.Tables["RegistroDiarioVuelos"] != null)) {
                     base.Tables.Add(new RegistroDiarioVuelosDataTable(ds.Tables["RegistroDiarioVuelos"]));
+                }
+                if ((ds.Tables["RegistroVuelosCompleto"] != null)) {
+                    base.Tables.Add(new RegistroVuelosCompletoDataTable(ds.Tables["RegistroVuelosCompleto"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -116,6 +121,16 @@ namespace ProyectoCalidad {
         public RegistroDiarioVuelosDataTable RegistroDiarioVuelos {
             get {
                 return this.tableRegistroDiarioVuelos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public RegistroVuelosCompletoDataTable RegistroVuelosCompleto {
+            get {
+                return this.tableRegistroVuelosCompleto;
             }
         }
         
@@ -195,6 +210,9 @@ namespace ProyectoCalidad {
                 if ((ds.Tables["RegistroDiarioVuelos"] != null)) {
                     base.Tables.Add(new RegistroDiarioVuelosDataTable(ds.Tables["RegistroDiarioVuelos"]));
                 }
+                if ((ds.Tables["RegistroVuelosCompleto"] != null)) {
+                    base.Tables.Add(new RegistroVuelosCompletoDataTable(ds.Tables["RegistroVuelosCompleto"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -246,6 +264,12 @@ namespace ProyectoCalidad {
                     this.tableRegistroDiarioVuelos.InitVars();
                 }
             }
+            this.tableRegistroVuelosCompleto = ((RegistroVuelosCompletoDataTable)(base.Tables["RegistroVuelosCompleto"]));
+            if ((initTable == true)) {
+                if ((this.tableRegistroVuelosCompleto != null)) {
+                    this.tableRegistroVuelosCompleto.InitVars();
+                }
+            }
             this.relationFK__Vuelos__CodigoAe__31EC6D26 = this.Relations["FK__Vuelos__CodigoAe__31EC6D26"];
             this.relationFK__RegistroD__Codig__36B12243 = this.Relations["FK__RegistroD__Codig__36B12243"];
         }
@@ -264,6 +288,8 @@ namespace ProyectoCalidad {
             base.Tables.Add(this.tableVuelos);
             this.tableRegistroDiarioVuelos = new RegistroDiarioVuelosDataTable();
             base.Tables.Add(this.tableRegistroDiarioVuelos);
+            this.tableRegistroVuelosCompleto = new RegistroVuelosCompletoDataTable();
+            base.Tables.Add(this.tableRegistroVuelosCompleto);
             this.relationFK__Vuelos__CodigoAe__31EC6D26 = new global::System.Data.DataRelation("FK__Vuelos__CodigoAe__31EC6D26", new global::System.Data.DataColumn[] {
                         this.tableAeropuerto.CodigoColumn}, new global::System.Data.DataColumn[] {
                         this.tableVuelos.CodigoAeropuertoColumn}, false);
@@ -289,6 +315,12 @@ namespace ProyectoCalidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeRegistroDiarioVuelos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeRegistroVuelosCompleto() {
             return false;
         }
         
@@ -355,6 +387,9 @@ namespace ProyectoCalidad {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void RegistroDiarioVuelosRowChangeEventHandler(object sender, RegistroDiarioVuelosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void RegistroVuelosCompletoRowChangeEventHandler(object sender, RegistroVuelosCompletoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1329,6 +1364,403 @@ namespace ProyectoCalidad {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class RegistroVuelosCompletoDataTable : global::System.Data.TypedTableBase<RegistroVuelosCompletoRow> {
+            
+            private global::System.Data.DataColumn columnIdRegistro;
+            
+            private global::System.Data.DataColumn columnCodigoVuelo;
+            
+            private global::System.Data.DataColumn columnDia;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnCantidadPasajeros;
+            
+            private global::System.Data.DataColumn columnCompaniaAerea;
+            
+            private global::System.Data.DataColumn columnArrivalDeparture;
+            
+            private global::System.Data.DataColumn columnCodigoAeropuerto;
+            
+            private global::System.Data.DataColumn columnCapacidadMaxima;
+            
+            private global::System.Data.DataColumn columnPais;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoDataTable() {
+                this.TableName = "RegistroVuelosCompleto";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal RegistroVuelosCompletoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected RegistroVuelosCompletoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdRegistroColumn {
+                get {
+                    return this.columnIdRegistro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CodigoVueloColumn {
+                get {
+                    return this.columnCodigoVuelo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DiaColumn {
+                get {
+                    return this.columnDia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FechaColumn {
+                get {
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CantidadPasajerosColumn {
+                get {
+                    return this.columnCantidadPasajeros;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CompaniaAereaColumn {
+                get {
+                    return this.columnCompaniaAerea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ArrivalDepartureColumn {
+                get {
+                    return this.columnArrivalDeparture;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CodigoAeropuertoColumn {
+                get {
+                    return this.columnCodigoAeropuerto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CapacidadMaximaColumn {
+                get {
+                    return this.columnCapacidadMaxima;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PaisColumn {
+                get {
+                    return this.columnPais;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoRow this[int index] {
+                get {
+                    return ((RegistroVuelosCompletoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event RegistroVuelosCompletoRowChangeEventHandler RegistroVuelosCompletoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event RegistroVuelosCompletoRowChangeEventHandler RegistroVuelosCompletoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event RegistroVuelosCompletoRowChangeEventHandler RegistroVuelosCompletoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event RegistroVuelosCompletoRowChangeEventHandler RegistroVuelosCompletoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddRegistroVuelosCompletoRow(RegistroVuelosCompletoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoRow AddRegistroVuelosCompletoRow(int IdRegistro, string CodigoVuelo, string Dia, System.DateTime Fecha, byte CantidadPasajeros, string CompaniaAerea, string ArrivalDeparture, string CodigoAeropuerto, decimal CapacidadMaxima, string Pais) {
+                RegistroVuelosCompletoRow rowRegistroVuelosCompletoRow = ((RegistroVuelosCompletoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IdRegistro,
+                        CodigoVuelo,
+                        Dia,
+                        Fecha,
+                        CantidadPasajeros,
+                        CompaniaAerea,
+                        ArrivalDeparture,
+                        CodigoAeropuerto,
+                        CapacidadMaxima,
+                        Pais};
+                rowRegistroVuelosCompletoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRegistroVuelosCompletoRow);
+                return rowRegistroVuelosCompletoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoRow FindByIdRegistro(int IdRegistro) {
+                return ((RegistroVuelosCompletoRow)(this.Rows.Find(new object[] {
+                            IdRegistro})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                RegistroVuelosCompletoDataTable cln = ((RegistroVuelosCompletoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new RegistroVuelosCompletoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnIdRegistro = base.Columns["IdRegistro"];
+                this.columnCodigoVuelo = base.Columns["CodigoVuelo"];
+                this.columnDia = base.Columns["Dia"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnCantidadPasajeros = base.Columns["CantidadPasajeros"];
+                this.columnCompaniaAerea = base.Columns["CompaniaAerea"];
+                this.columnArrivalDeparture = base.Columns["ArrivalDeparture"];
+                this.columnCodigoAeropuerto = base.Columns["CodigoAeropuerto"];
+                this.columnCapacidadMaxima = base.Columns["CapacidadMaxima"];
+                this.columnPais = base.Columns["Pais"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnIdRegistro = new global::System.Data.DataColumn("IdRegistro", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdRegistro);
+                this.columnCodigoVuelo = new global::System.Data.DataColumn("CodigoVuelo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoVuelo);
+                this.columnDia = new global::System.Data.DataColumn("Dia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDia);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnCantidadPasajeros = new global::System.Data.DataColumn("CantidadPasajeros", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadPasajeros);
+                this.columnCompaniaAerea = new global::System.Data.DataColumn("CompaniaAerea", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompaniaAerea);
+                this.columnArrivalDeparture = new global::System.Data.DataColumn("ArrivalDeparture", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArrivalDeparture);
+                this.columnCodigoAeropuerto = new global::System.Data.DataColumn("CodigoAeropuerto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoAeropuerto);
+                this.columnCapacidadMaxima = new global::System.Data.DataColumn("CapacidadMaxima", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCapacidadMaxima);
+                this.columnPais = new global::System.Data.DataColumn("Pais", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPais);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdRegistro}, true));
+                this.columnIdRegistro.AllowDBNull = false;
+                this.columnIdRegistro.Unique = true;
+                this.columnCodigoVuelo.MaxLength = 50;
+                this.columnDia.AllowDBNull = false;
+                this.columnDia.MaxLength = 50;
+                this.columnFecha.AllowDBNull = false;
+                this.columnCompaniaAerea.AllowDBNull = false;
+                this.columnCompaniaAerea.MaxLength = 50;
+                this.columnArrivalDeparture.AllowDBNull = false;
+                this.columnArrivalDeparture.MaxLength = 10;
+                this.columnCodigoAeropuerto.AllowDBNull = false;
+                this.columnCodigoAeropuerto.MaxLength = 50;
+                this.columnCapacidadMaxima.AllowDBNull = false;
+                this.columnPais.AllowDBNull = false;
+                this.columnPais.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoRow NewRegistroVuelosCompletoRow() {
+                return ((RegistroVuelosCompletoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new RegistroVuelosCompletoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(RegistroVuelosCompletoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.RegistroVuelosCompletoRowChanged != null)) {
+                    this.RegistroVuelosCompletoRowChanged(this, new RegistroVuelosCompletoRowChangeEvent(((RegistroVuelosCompletoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.RegistroVuelosCompletoRowChanging != null)) {
+                    this.RegistroVuelosCompletoRowChanging(this, new RegistroVuelosCompletoRowChangeEvent(((RegistroVuelosCompletoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.RegistroVuelosCompletoRowDeleted != null)) {
+                    this.RegistroVuelosCompletoRowDeleted(this, new RegistroVuelosCompletoRowChangeEvent(((RegistroVuelosCompletoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.RegistroVuelosCompletoRowDeleting != null)) {
+                    this.RegistroVuelosCompletoRowDeleting(this, new RegistroVuelosCompletoRowChangeEvent(((RegistroVuelosCompletoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveRegistroVuelosCompletoRow(RegistroVuelosCompletoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                base_calidadDataSet ds = new base_calidadDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "RegistroVuelosCompletoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AeropuertoRow : global::System.Data.DataRow {
@@ -1618,6 +2050,166 @@ namespace ProyectoCalidad {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class RegistroVuelosCompletoRow : global::System.Data.DataRow {
+            
+            private RegistroVuelosCompletoDataTable tableRegistroVuelosCompleto;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal RegistroVuelosCompletoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRegistroVuelosCompleto = ((RegistroVuelosCompletoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdRegistro {
+                get {
+                    return ((int)(this[this.tableRegistroVuelosCompleto.IdRegistroColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.IdRegistroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CodigoVuelo {
+                get {
+                    try {
+                        return ((string)(this[this.tableRegistroVuelosCompleto.CodigoVueloColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoVuelo\' in table \'RegistroVuelosCompleto\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.CodigoVueloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Dia {
+                get {
+                    return ((string)(this[this.tableRegistroVuelosCompleto.DiaColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.DiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Fecha {
+                get {
+                    return ((global::System.DateTime)(this[this.tableRegistroVuelosCompleto.FechaColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte CantidadPasajeros {
+                get {
+                    try {
+                        return ((byte)(this[this.tableRegistroVuelosCompleto.CantidadPasajerosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CantidadPasajeros\' in table \'RegistroVuelosCompleto\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.CantidadPasajerosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CompaniaAerea {
+                get {
+                    return ((string)(this[this.tableRegistroVuelosCompleto.CompaniaAereaColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.CompaniaAereaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ArrivalDeparture {
+                get {
+                    return ((string)(this[this.tableRegistroVuelosCompleto.ArrivalDepartureColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.ArrivalDepartureColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CodigoAeropuerto {
+                get {
+                    return ((string)(this[this.tableRegistroVuelosCompleto.CodigoAeropuertoColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.CodigoAeropuertoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal CapacidadMaxima {
+                get {
+                    return ((decimal)(this[this.tableRegistroVuelosCompleto.CapacidadMaximaColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.CapacidadMaximaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Pais {
+                get {
+                    return ((string)(this[this.tableRegistroVuelosCompleto.PaisColumn]));
+                }
+                set {
+                    this[this.tableRegistroVuelosCompleto.PaisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCodigoVueloNull() {
+                return this.IsNull(this.tableRegistroVuelosCompleto.CodigoVueloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCodigoVueloNull() {
+                this[this.tableRegistroVuelosCompleto.CodigoVueloColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCantidadPasajerosNull() {
+                return this.IsNull(this.tableRegistroVuelosCompleto.CantidadPasajerosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCantidadPasajerosNull() {
+                this[this.tableRegistroVuelosCompleto.CantidadPasajerosColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1705,6 +2297,40 @@ namespace ProyectoCalidad {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public RegistroDiarioVuelosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class RegistroVuelosCompletoRowChangeEvent : global::System.EventArgs {
+            
+            private RegistroVuelosCompletoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoRowChangeEvent(RegistroVuelosCompletoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public RegistroVuelosCompletoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2915,6 +3541,184 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string CodigoVuelo, string Dia, System.DateTime Fecha, global::System.Nullable<byte> CantidadPasajeros, int Original_IdRegistro, string Original_CodigoVuelo, string Original_Dia, System.DateTime Original_Fecha, global::System.Nullable<byte> Original_CantidadPasajeros) {
             return this.Update(CodigoVuelo, Dia, Fecha, CantidadPasajeros, Original_IdRegistro, Original_CodigoVuelo, Original_Dia, Original_Fecha, Original_CantidadPasajeros, Original_IdRegistro);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class RegistroVuelosCompletoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public RegistroVuelosCompletoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "RegistroVuelosCompleto";
+            tableMapping.ColumnMappings.Add("IdRegistro", "IdRegistro");
+            tableMapping.ColumnMappings.Add("CodigoVuelo", "CodigoVuelo");
+            tableMapping.ColumnMappings.Add("Dia", "Dia");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("CantidadPasajeros", "CantidadPasajeros");
+            tableMapping.ColumnMappings.Add("CompaniaAerea", "CompaniaAerea");
+            tableMapping.ColumnMappings.Add("ArrivalDeparture", "ArrivalDeparture");
+            tableMapping.ColumnMappings.Add("CodigoAeropuerto", "CodigoAeropuerto");
+            tableMapping.ColumnMappings.Add("CapacidadMaxima", "CapacidadMaxima");
+            tableMapping.ColumnMappings.Add("Pais", "Pais");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProyectoCalidad.Properties.Settings.Default.base_calidadConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros, CompaniaAerea, Arr" +
+                "ivalDeparture, CodigoAeropuerto, CapacidadMaxima, Pais FROM dbo.RegistroVuelosCo" +
+                "mpleto";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(base_calidadDataSet.RegistroVuelosCompletoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual base_calidadDataSet.RegistroVuelosCompletoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            base_calidadDataSet.RegistroVuelosCompletoDataTable dataTable = new base_calidadDataSet.RegistroVuelosCompletoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

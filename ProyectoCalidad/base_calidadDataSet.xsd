@@ -197,6 +197,31 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RegistroVuelosCompletoTableAdapter" GeneratorDataComponentClassName="RegistroVuelosCompletoTableAdapter" Name="RegistroVuelosCompleto" UserDataComponentName="RegistroVuelosCompletoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="base_calidadConnectionString (Settings)" DbObjectName="base_calidad.dbo.RegistroVuelosCompleto" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros, CompaniaAerea, ArrivalDeparture, CodigoAeropuerto, CapacidadMaxima, Pais FROM dbo.RegistroVuelosCompleto</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdRegistro" DataSetColumn="IdRegistro" />
+              <Mapping SourceColumn="CodigoVuelo" DataSetColumn="CodigoVuelo" />
+              <Mapping SourceColumn="Dia" DataSetColumn="Dia" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="CantidadPasajeros" DataSetColumn="CantidadPasajeros" />
+              <Mapping SourceColumn="CompaniaAerea" DataSetColumn="CompaniaAerea" />
+              <Mapping SourceColumn="ArrivalDeparture" DataSetColumn="ArrivalDeparture" />
+              <Mapping SourceColumn="CodigoAeropuerto" DataSetColumn="CodigoAeropuerto" />
+              <Mapping SourceColumn="CapacidadMaxima" DataSetColumn="CapacidadMaxima" />
+              <Mapping SourceColumn="Pais" DataSetColumn="Pais" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -205,7 +230,7 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
   <xs:element name="base_calidadDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="base_calidadDataSet" msprop:Generator_UserDSName="base_calidadDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Aeropuerto" msprop:Generator_TableClassName="AeropuertoDataTable" msprop:Generator_TableVarName="tableAeropuerto" msprop:Generator_RowChangedName="AeropuertoRowChanged" msprop:Generator_TablePropName="Aeropuerto" msprop:Generator_RowDeletingName="AeropuertoRowDeleting" msprop:Generator_RowChangingName="AeropuertoRowChanging" msprop:Generator_RowEvHandlerName="AeropuertoRowChangeEventHandler" msprop:Generator_RowDeletedName="AeropuertoRowDeleted" msprop:Generator_RowClassName="AeropuertoRow" msprop:Generator_UserTableName="Aeropuerto" msprop:Generator_RowEvArgName="AeropuertoRowChangeEvent">
+        <xs:element name="Aeropuerto" msprop:Generator_TableClassName="AeropuertoDataTable" msprop:Generator_TableVarName="tableAeropuerto" msprop:Generator_TablePropName="Aeropuerto" msprop:Generator_RowDeletingName="AeropuertoRowDeleting" msprop:Generator_RowChangingName="AeropuertoRowChanging" msprop:Generator_RowEvHandlerName="AeropuertoRowChangeEventHandler" msprop:Generator_RowDeletedName="AeropuertoRowDeleted" msprop:Generator_UserTableName="Aeropuerto" msprop:Generator_RowChangedName="AeropuertoRowChanged" msprop:Generator_RowEvArgName="AeropuertoRowChangeEvent" msprop:Generator_RowClassName="AeropuertoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo">
@@ -233,7 +258,7 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vuelos" msprop:Generator_TableClassName="VuelosDataTable" msprop:Generator_TableVarName="tableVuelos" msprop:Generator_RowChangedName="VuelosRowChanged" msprop:Generator_TablePropName="Vuelos" msprop:Generator_RowDeletingName="VuelosRowDeleting" msprop:Generator_RowChangingName="VuelosRowChanging" msprop:Generator_RowEvHandlerName="VuelosRowChangeEventHandler" msprop:Generator_RowDeletedName="VuelosRowDeleted" msprop:Generator_RowClassName="VuelosRow" msprop:Generator_UserTableName="Vuelos" msprop:Generator_RowEvArgName="VuelosRowChangeEvent">
+        <xs:element name="Vuelos" msprop:Generator_TableClassName="VuelosDataTable" msprop:Generator_TableVarName="tableVuelos" msprop:Generator_TablePropName="Vuelos" msprop:Generator_RowDeletingName="VuelosRowDeleting" msprop:Generator_RowChangingName="VuelosRowChanging" msprop:Generator_RowEvHandlerName="VuelosRowChangeEventHandler" msprop:Generator_RowDeletedName="VuelosRowDeleted" msprop:Generator_UserTableName="Vuelos" msprop:Generator_RowChangedName="VuelosRowChanged" msprop:Generator_RowEvArgName="VuelosRowChangeEvent" msprop:Generator_RowClassName="VuelosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodigoVuelo" msprop:Generator_ColumnVarNameInTable="columnCodigoVuelo" msprop:Generator_ColumnPropNameInRow="CodigoVuelo" msprop:Generator_ColumnPropNameInTable="CodigoVueloColumn" msprop:Generator_UserColumnName="CodigoVuelo">
@@ -275,7 +300,7 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RegistroDiarioVuelos" msprop:Generator_TableClassName="RegistroDiarioVuelosDataTable" msprop:Generator_TableVarName="tableRegistroDiarioVuelos" msprop:Generator_TablePropName="RegistroDiarioVuelos" msprop:Generator_RowDeletingName="RegistroDiarioVuelosRowDeleting" msprop:Generator_RowChangingName="RegistroDiarioVuelosRowChanging" msprop:Generator_RowEvHandlerName="RegistroDiarioVuelosRowChangeEventHandler" msprop:Generator_RowDeletedName="RegistroDiarioVuelosRowDeleted" msprop:Generator_UserTableName="RegistroDiarioVuelos" msprop:Generator_RowChangedName="RegistroDiarioVuelosRowChanged" msprop:Generator_RowEvArgName="RegistroDiarioVuelosRowChangeEvent" msprop:Generator_RowClassName="RegistroDiarioVuelosRow">
+        <xs:element name="RegistroDiarioVuelos" msprop:Generator_TableClassName="RegistroDiarioVuelosDataTable" msprop:Generator_TableVarName="tableRegistroDiarioVuelos" msprop:Generator_RowChangedName="RegistroDiarioVuelosRowChanged" msprop:Generator_TablePropName="RegistroDiarioVuelos" msprop:Generator_RowDeletingName="RegistroDiarioVuelosRowDeleting" msprop:Generator_RowChangingName="RegistroDiarioVuelosRowChanging" msprop:Generator_RowEvHandlerName="RegistroDiarioVuelosRowChangeEventHandler" msprop:Generator_RowDeletedName="RegistroDiarioVuelosRowDeleted" msprop:Generator_RowClassName="RegistroDiarioVuelosRow" msprop:Generator_UserTableName="RegistroDiarioVuelos" msprop:Generator_RowEvArgName="RegistroDiarioVuelosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdRegistro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdRegistro" msprop:Generator_ColumnPropNameInRow="IdRegistro" msprop:Generator_ColumnPropNameInTable="IdRegistroColumn" msprop:Generator_UserColumnName="IdRegistro" type="xs:int" />
@@ -298,6 +323,58 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="RegistroVuelosCompleto" msprop:Generator_TableClassName="RegistroVuelosCompletoDataTable" msprop:Generator_TableVarName="tableRegistroVuelosCompleto" msprop:Generator_TablePropName="RegistroVuelosCompleto" msprop:Generator_RowDeletingName="RegistroVuelosCompletoRowDeleting" msprop:Generator_RowChangingName="RegistroVuelosCompletoRowChanging" msprop:Generator_RowEvHandlerName="RegistroVuelosCompletoRowChangeEventHandler" msprop:Generator_RowDeletedName="RegistroVuelosCompletoRowDeleted" msprop:Generator_UserTableName="RegistroVuelosCompleto" msprop:Generator_RowChangedName="RegistroVuelosCompletoRowChanged" msprop:Generator_RowEvArgName="RegistroVuelosCompletoRowChangeEvent" msprop:Generator_RowClassName="RegistroVuelosCompletoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdRegistro" msprop:Generator_ColumnVarNameInTable="columnIdRegistro" msprop:Generator_ColumnPropNameInRow="IdRegistro" msprop:Generator_ColumnPropNameInTable="IdRegistroColumn" msprop:Generator_UserColumnName="IdRegistro" type="xs:int" />
+              <xs:element name="CodigoVuelo" msprop:Generator_ColumnVarNameInTable="columnCodigoVuelo" msprop:Generator_ColumnPropNameInRow="CodigoVuelo" msprop:Generator_ColumnPropNameInTable="CodigoVueloColumn" msprop:Generator_UserColumnName="CodigoVuelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dia" msprop:Generator_ColumnVarNameInTable="columnDia" msprop:Generator_ColumnPropNameInRow="Dia" msprop:Generator_ColumnPropNameInTable="DiaColumn" msprop:Generator_UserColumnName="Dia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="CantidadPasajeros" msprop:Generator_ColumnVarNameInTable="columnCantidadPasajeros" msprop:Generator_ColumnPropNameInRow="CantidadPasajeros" msprop:Generator_ColumnPropNameInTable="CantidadPasajerosColumn" msprop:Generator_UserColumnName="CantidadPasajeros" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CompaniaAerea" msprop:Generator_ColumnVarNameInTable="columnCompaniaAerea" msprop:Generator_ColumnPropNameInRow="CompaniaAerea" msprop:Generator_ColumnPropNameInTable="CompaniaAereaColumn" msprop:Generator_UserColumnName="CompaniaAerea">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArrivalDeparture" msprop:Generator_ColumnVarNameInTable="columnArrivalDeparture" msprop:Generator_ColumnPropNameInRow="ArrivalDeparture" msprop:Generator_ColumnPropNameInTable="ArrivalDepartureColumn" msprop:Generator_UserColumnName="ArrivalDeparture">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoAeropuerto" msprop:Generator_ColumnVarNameInTable="columnCodigoAeropuerto" msprop:Generator_ColumnPropNameInRow="CodigoAeropuerto" msprop:Generator_ColumnPropNameInTable="CodigoAeropuertoColumn" msprop:Generator_UserColumnName="CodigoAeropuerto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CapacidadMaxima" msprop:Generator_ColumnVarNameInTable="columnCapacidadMaxima" msprop:Generator_ColumnPropNameInRow="CapacidadMaxima" msprop:Generator_ColumnPropNameInTable="CapacidadMaximaColumn" msprop:Generator_UserColumnName="CapacidadMaxima" type="xs:decimal" />
+              <xs:element name="Pais" msprop:Generator_ColumnVarNameInTable="columnPais" msprop:Generator_ColumnPropNameInRow="Pais" msprop:Generator_ColumnPropNameInTable="PaisColumn" msprop:Generator_UserColumnName="Pais">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -312,11 +389,15 @@ SELECT IdRegistro, CodigoVuelo, Dia, Fecha, CantidadPasajeros FROM RegistroDiari
       <xs:selector xpath=".//mstns:RegistroDiarioVuelos" />
       <xs:field xpath="mstns:IdRegistro" />
     </xs:unique>
+    <xs:unique name="RegistroVuelosCompleto_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RegistroVuelosCompleto" />
+      <xs:field xpath="mstns:IdRegistro" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Vuelos__CodigoAe__31EC6D26" msdata:parent="Aeropuerto" msdata:child="Vuelos" msdata:parentkey="Codigo" msdata:childkey="CodigoAeropuerto" msprop:Generator_UserChildTable="Vuelos" msprop:Generator_ChildPropName="GetVuelosRows" msprop:Generator_UserRelationName="FK__Vuelos__CodigoAe__31EC6D26" msprop:Generator_RelationVarName="relationFK__Vuelos__CodigoAe__31EC6D26" msprop:Generator_UserParentTable="Aeropuerto" msprop:Generator_ParentPropName="AeropuertoRow" />
-      <msdata:Relationship name="FK__RegistroD__Codig__36B12243" msdata:parent="Vuelos" msdata:child="RegistroDiarioVuelos" msdata:parentkey="CodigoVuelo" msdata:childkey="CodigoVuelo" msprop:Generator_UserChildTable="RegistroDiarioVuelos" msprop:Generator_ChildPropName="GetRegistroDiarioVuelosRows" msprop:Generator_UserRelationName="FK__RegistroD__Codig__36B12243" msprop:Generator_ParentPropName="VuelosRow" msprop:Generator_RelationVarName="relationFK__RegistroD__Codig__36B12243" msprop:Generator_UserParentTable="Vuelos" />
+      <msdata:Relationship name="FK__Vuelos__CodigoAe__31EC6D26" msdata:parent="Aeropuerto" msdata:child="Vuelos" msdata:parentkey="Codigo" msdata:childkey="CodigoAeropuerto" msprop:Generator_UserChildTable="Vuelos" msprop:Generator_ChildPropName="GetVuelosRows" msprop:Generator_UserRelationName="FK__Vuelos__CodigoAe__31EC6D26" msprop:Generator_ParentPropName="AeropuertoRow" msprop:Generator_RelationVarName="relationFK__Vuelos__CodigoAe__31EC6D26" msprop:Generator_UserParentTable="Aeropuerto" />
+      <msdata:Relationship name="FK__RegistroD__Codig__36B12243" msdata:parent="Vuelos" msdata:child="RegistroDiarioVuelos" msdata:parentkey="CodigoVuelo" msdata:childkey="CodigoVuelo" msprop:Generator_UserChildTable="RegistroDiarioVuelos" msprop:Generator_ChildPropName="GetRegistroDiarioVuelosRows" msprop:Generator_UserRelationName="FK__RegistroD__Codig__36B12243" msprop:Generator_RelationVarName="relationFK__RegistroD__Codig__36B12243" msprop:Generator_UserParentTable="Vuelos" msprop:Generator_ParentPropName="VuelosRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
